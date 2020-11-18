@@ -1,10 +1,7 @@
-const config = require("./config.js")
-function run(packages){
+const config = require("../config.js")
+function run(cmd){
  var { spawn } = require("child_process");
-  var action = ["install"]
-  var args = ["--silent"]
-packages = action.concat(packages).concat(args)
-var cmd = spawn(config.packageInstaller || "npm", packages);
+var cmd = spawn(cmd, []);
 
 cmd.stdout.on("data", data => {
     console.log(data.toString());
