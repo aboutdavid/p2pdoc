@@ -1,3 +1,6 @@
 module.exports = {
-  installPackages: true
-}
+  installPackages: true,
+  packages: ["chalk"],
+  packageInstaller: "pnpm",
+  runAfterInstall: ""
+};
