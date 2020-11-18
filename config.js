@@ -1,6 +1,6 @@
 module.exports = {
-  installPackages: true,
-  packages: ["chalk"],
-  packageInstaller: "pnpm",
-  runAfterInstall: "echo hello!"
+  installPackages: true, // boolean, should the runtime install packages from npm?
+  packages: ["chalk"], // Array, npm pacakges that should be installed if "installPackages" is set to true
+  runCmdAfterInstall: true, // boolean, Should the runtime run a command after package install?
+  runAfterInstall: "echo hello!" // string, command that should be ran if "runCmdAfterInstall" is set to
 };

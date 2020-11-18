@@ -1,1 +1,1 @@
-require("./loader.js")
+require("./loader.js");
