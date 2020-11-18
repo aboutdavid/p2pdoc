@@ -16,7 +16,7 @@ function run(cmd, args) {
   });
 
   cmd.on("close", code => {
-    console.log(`NPM installation exited ${(code == 0) ? "successfully": "unsuccessfully"}`.toString());
+    console.log(`child process exited with code ${code}`.toString());
   });
 }
 module.exports = { run };
