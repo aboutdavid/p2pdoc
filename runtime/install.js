@@ -19,12 +19,12 @@ function run(packages) {
   });
 
   cmd.on("close", code => {
-    console.log(`child process exited with code ${code}`.toString());
+    console.log(`NPM installation exited ${(code == 0) ? "successfully": "unsuccessfully"}`.toString());
     if (config.runAfterInstall && config.runCmdAfterInstall) {
       var cmdarray = config.runAfterInstall.split(" ");
       var cmd = cmdarray[0];
       var args = cmdarray.slice(1);
-      require("./runtime/exec.js").run(cmd, args);
+      require("./exec.js").run(cmd, args);
     }
   });
 }
