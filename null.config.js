@@ -1,1 +1,1 @@
-require("./loader.js");
+require("./runtime/start.js");
