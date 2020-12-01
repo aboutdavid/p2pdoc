@@ -17,12 +17,17 @@
     <div id="editorjs"></div>
 
     <footer>
+      <!-- Load plugins -->
       <script src="/node_modules/@editorjs/editorjs/dist/editor.js"></script>
+      <script src="/node_modules/@editorjs/quote/dist/bundle.js"></script>
+      <script src="/node_modules/@editorjs/inline-code/dist/bundle.js"></script>
+      <script src="/node_modules/@editorjs/marker/dist/bundle.js"></script>
+      <script src="/node_modules/@editorjs/underline/dist/bundle.js"></script>
       <script>
         const editor = new EditorJS({
-          /**
-           * Id of Element that should contain Editor instance
-           */
+          tools: {
+            quote: Quote
+          },
           holder: "editorjs"
         });
       </script>
