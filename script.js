@@ -47,19 +47,3 @@ window.saveDoc = function() {
       console.log("Saving failed: ", error);
     });
 };
-var pwa = window.PWAinit();
-pwa.name = "P2Pdoc";
-pwa.short_name = "P2Pdoc";
-pwa.description =
-  "P2Pdoc allows you to create a document and then upload it to the distributed web!";
-pwa.icons = [
-  window.PWAIcon("/img/android-chrome-192x192.png", "192x192", "png"),
-  window.PWAIcon("/img/android-chrome-512x512.png", "512x512", "png"),
-  window.PWAIcon("/img/apple-touch-icon.png", "180x180", "png"),
-  window.PWAIcon("/img/favicon-16x16.png", "16x16", "png"),
-  window.PWAIcon("/img/favicon-32x32.png", "32x32", "png"),
-  window.PWAIcon("/img/favicon.ico", "16x16", "ico"),
-];
-pwa.theme_color = "#222"
-pwa.background_color = "#222"
-window.PWAInject(pwa, "/sw.js");

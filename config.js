@@ -3,8 +3,10 @@ module.exports = {
   packages: [
     "normalize.min.css",
     "blocks.css",
-    "@aboutdavid/easypwa",
     "@editorjs/editorjs",
+    "@editorjs/embed",
+    "@editorjs/paragraph",
+    "editorjs-header-with-anchor",
     "@editorjs/quote",
     "@editorjs/inline-code",
     "@editorjs/underline",

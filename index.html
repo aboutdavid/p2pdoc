@@ -5,17 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  
-
     <!-- import the webpage's stylesheet -->
     <link
       rel="stylesheet"
       href="/node_modules/normalize.min.css/normalize.min.css"
     />
-<script src="https://p2pdoc.glitch.me/node_modules/@aboutdavid/easypwa/dist/bundle.js"></script>
+    <script>
+        if ("serviceWorker" in navigator) {
+      navigator.serviceWorker
+        .register("/sw.js")
+        .then(reg => {
+          // registration worked
+          console.log("Registration succeeded. Scope is " + reg.scope);
+        })
+        .catch(error => {
+          // registration failed
+          console.log("Registration failed with " + error);
+        });
+    </script>
+    <link rel="manifest" href="/manifest.json" />
     <script src="https://cdn.jsdelivr.net/npm/ipfs@0.52.2/dist/index.min.js"></script>
     <link rel="stylesheet" href="/style.css" />
-    <link rel="stylesheet" href="/node_modules/blocks.css/dist/blocks.min.css" />
+    <link
+      rel="stylesheet"
+      href="/node_modules/blocks.css/dist/blocks.min.css"
+    />
     <!-- import the webpage's javascript file -->
     <script src="/script.js" defer></script>
   </head>
@@ -23,7 +37,15 @@
     <h1>
       P2PNote
     </h1>
-    <button class="block fixed" onclick="window.saveDoc()" id="savebtn" type="button" disabled>Loading...</button>
+    <button
+      class="block fixed"
+      onclick="window.saveDoc()"
+      id="savebtn"
+      type="button"
+      disabled
+    >
+      Loading...
+    </button>
     <br />
     <div id="editorjs"></div>
 
@@ -39,7 +61,10 @@
       <script src="/node_modules/@editorjs/table/dist/bundle.js"></script>
       <script src="/node_modules/@editorjs/delimiter/dist/bundle.js"></script>
       <script src="/node_modules/@editorjs/simple-image/dist/bundle.js"></script>
-      <script src="/node_modules/@editorjs/header/dist/bundle.js"></script>
+      <script src="/node_modules/editorjs-header-with-anchor/dist/bundle.js"></script>
+      <script src="/node_modules/@editorjs/embed/dist/bundle.js"></script>
+      <script src="/node_modules/@editorjs/paragraph/dist/bundle.js"></script>
+      <script src="/node_modules/@editorjs/warning/dist/bundle.js"></script>
       <script>
         window.editor = new EditorJS({
           tools: {
@@ -63,7 +88,9 @@
               inlineToolbar: true
             },
             code: CodeTool,
-            image: SimpleImage
+            image: SimpleImage,
+            embed: Embed,
+            warning: Warning
           },
           holder: "editorjs"
         });
