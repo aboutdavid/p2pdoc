@@ -2,6 +2,7 @@ module.exports = {
   installPackages: true,
   packages: [
     "normalize.min.css",
+    "blocks.css",
     "@aboutdavid/easypwa",
     "@editorjs/editorjs",
     "@editorjs/quote",
