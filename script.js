@@ -5,6 +5,14 @@ document.addEventListener("DOMContentLoaded", async () => {
     (async () => {
       window.loadDoc();
     })();
+  } else {
+    (async () => {
+      for await (const data of window.node.cat(
+        "QmRNXdZsgUA86CzS1GB8GfLhQ8WEuQ58Vt5aWM3ia7jYY2"
+      )) {
+        window.editor.render(JSON.parse(data.toString()));
+      }
+    })();
   }
   document.getElementById("savebtn").disabled = false;
   document.getElementById("savebtn").setAttribute("class", "block");
