@@ -20,20 +20,9 @@ function run(packages, installpkgs) {
 
   cmd.on("close", code => {
     console.log(`NPM installation exited with code: ${code}`.toString());
-   if(installpkgs){
-  var cmdarray = config.runAfterInstall.split(" ");
-  var cmd = cmdarray[0];
-  var args = cmdarray.slice(1);
-  require("./exec.js").run(cmd, args);
-   }
   });
 }
 
-if (config.installPackages){
-  run(config.packages, true)
-} else if (config.runAfterInstall && config.runCmdAfterInstall){
-  var cmdarray = config.runAfterInstall.split(" ");
-  var cmd = cmdarray[0];
-  var args = cmdarray.slice(1);
-  require("./exec.js").run(cmd, args);
+if (config.installPackages) {
+  run(config.packages, true);
 }
