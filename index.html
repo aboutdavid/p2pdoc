@@ -26,7 +26,16 @@
       <script>
         const editor = new EditorJS({
           tools: {
-            quote: Quote
+            quote: Quote,
+            Marker: {
+              class: Marker,
+              shortcut: "CMD+SHIFT+M"
+            },
+            inlineCode: {
+              class: InlineCode,
+              shortcut: "CMD+SHIFT+M"
+            },
+            underline: Underline
           },
           holder: "editorjs"
         });
