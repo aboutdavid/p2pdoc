@@ -17,10 +17,18 @@ window.saveDoc = function() {
     .save()
     .then(outputData => {
       console.log("Article data: ", outputData.blocks);
-      (async() => {
-        var res = JSON.parse(outputData.blocks);
+      (async () => {
+        var res = JSON.stringify({ blocks: outputData.blocks });
         const { cid } = await node.add(res);
-        console.log(cid);
+
+        navigator.clipboard.writeText(`https://${location.hostname}/#${cid.string}`).then(
+          function() {
+            /* clipboard successfully set */
+          },
+          function() {
+            /* clipboard write failed */
+          }
+        );
       })();
     })
     .catch(error => {
