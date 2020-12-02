@@ -4,11 +4,54 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Primary Meta Tags -->
+    <title>P2Pdoc</title>
+    <meta name="title" content="P2Pdoc" />
+    <meta
+      name="description"
+      content="P2Pdoc allows you to create a document and then upload it to the distributed web via IPFS"
+    />
 
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://p2pdoc.glitch.me/" />
+    <meta property="og:title" content="P2Pdoc" />
+    <meta
+      property="og:description"
+      content="P2Pdoc allows you to create a document and then upload it to the distributed web via IPFS"
+    />
+    <meta property="og:image" content="" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://p2pdoc.glitch.me/" />
+    <meta property="twitter:title" content="P2Pdoc" />
+    <meta
+      property="twitter:description"
+      content="P2Pdoc allows you to create a document and then upload it to the distributed web via IPFS"
+    />
+    <meta property="twitter:image" content="" />
     <!-- import the webpage's stylesheet -->
     <link
       rel="stylesheet"
       href="/node_modules/normalize.min.css/normalize.min.css"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/img/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/img/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/img/favicon-16x16.png"
     />
     <script>
       if ("serviceWorker" in navigator) {
@@ -42,6 +85,15 @@
       class="block fixed"
       onclick="window.saveDoc()"
       id="savebtn"
+      type="button"
+      disabled
+    >
+      Loading...
+    </button>
+    <button
+      class="block fixed"
+      onclick="window.saveDoc()"
+      id="clearbtn"
       type="button"
       disabled
     >
