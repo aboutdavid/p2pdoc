@@ -34,9 +34,12 @@
       <script src="/node_modules/@editorjs/code/dist/bundle.js"></script>
       <script src="/node_modules/@editorjs/table/dist/bundle.js"></script>
       <script src="/node_modules/@editorjs/delimiter/dist/bundle.js"></script>
+      <script src="/node_modules/@editorjs/simple-image/dist/bundle.js"></script>
+      <script src="/node_modules/@editorjs/header/dist/bundle.js"></script>
       <script>
         const editor = new EditorJS({
           tools: {
+            header: Header,
             quote: Quote,
             Marker: {
               class: Marker,
@@ -55,7 +58,8 @@
               class: List,
               inlineToolbar: true
             },
-            code: CodeTool
+            code: CodeTool,
+            image: SimpleImage
           },
           holder: "editorjs"
         });

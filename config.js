@@ -10,7 +10,9 @@ module.exports = {
     "@editorjs/list",
     "@editorjs/code",
     "@editorjs/table",
-    "@editorjs/delimiter"
+    "@editorjs/delimiter",
+    "@editorjs/simple-image",
+    "@editorjs/header"
   ],
   runCmdAfterInstall: false,
   runAfterInstall: "echo Finished installing!"
