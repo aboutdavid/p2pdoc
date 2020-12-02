@@ -14,7 +14,8 @@
     />
 
     <script src="https://cdn.jsdelivr.net/npm/ipfs@0.52.2/dist/index.min.js"></script>
-    <link rel="stylesheet" href="https://trail-clover-spandex.glitch.me/node_modules/blocks.css/dist/reset.min.css" />
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/node_modules/blocks.css/dist/blocks.min.css" />
     <!-- import the webpage's javascript file -->
     <script src="/script.js" defer></script>
   </head>
@@ -22,6 +23,7 @@
     <h1>
       P2PNote
     </h1>
+    <button class="block fixed" onclick="window.saveDoc()" id="savebtn" type="button" disabled>Loading...</button>
     <br />
     <div id="editorjs"></div>
 

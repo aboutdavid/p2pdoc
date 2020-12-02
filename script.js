@@ -1,15 +1,18 @@
 document.addEventListener("DOMContentLoaded", async () => {
   const node = await window.Ipfs.create({ repo: "ipfs-" + Math.random() });
   window.node = node;
-
-  const status = node.isOnline() ? "online" : "offline";
-
-  console.log(`Node status: ${status}`);
-  document.getElementById("status").innerHTML = `Node status: ${status}`;
-
-  // You can write more code here to use it. Use methods like
-  // node.add, node.get. See the API docs here:
-  // https://github.com/ipfs/js-ipfs/tree/master/packages/interface-ipfs-core
+  if (window.location.hash.substr(1) != "") {
+    (async () => {
+      for await (const data of window.node.cat(
+        window.location.hash.substr(1)
+      )) {
+        window.editor.render(JSON.parse(data.toString()));
+      }
+    })();
+  }
+  document.getElementById("savebtn").disabled = false;
+  document.getElementById("savebtn").setAttribute("class", "block");
+  document.getElementById("savebtn").innerHTML = "Save!";
 });
 
 window.saveDoc = function() {
@@ -25,10 +28,17 @@ window.saveDoc = function() {
           .writeText(`https://${location.hostname}/#${cid.string}`)
           .then(
             function() {
-              /* clipboard successfully set */
+              document.getElementById("savebtn").innerHTML = "Saved!";
+              setTimeout(function() {
+                document.getElementById("savebtn").innerHTML = "Save!";
+              }, 3000);
             },
             function() {
-              /* clipboard write failed */
+              document.getElementById("savebtn").innerHTML =
+                "Failed to save :/";
+              setTimeout(function() {
+                document.getElementById("savebtn").innerHTML = "Save!";
+              }, 3000);
             }
           );
       })();
@@ -37,14 +47,3 @@ window.saveDoc = function() {
       console.log("Saving failed: ", error);
     });
 };
-window.addEventListener("DOMContentLoaded", event => {
-  if (window.location.hash.substr(1) != "") {
-    (async () => {
-      for await (const data of window.node.cat(
-        window.location.hash.substr(1)
-      )) {
-        window.editor.render(JSON.parse(data.toString()));
-      }
-    })();
-  }
-});
