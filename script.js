@@ -17,6 +17,8 @@ document.addEventListener("DOMContentLoaded", async () => {
   document.getElementById("savebtn").disabled = false;
   document.getElementById("savebtn").setAttribute("class", "block");
   document.getElementById("savebtn").innerHTML = "Save!";
+    document.getElementById("clearbtn").disabled = false;
+  document.getElementById("clearbtn").setAttribute("class", "block");
 });
 window.loadDoc = async function() {
   for await (const data of window.node.cat(window.location.hash.substr(1))) {
