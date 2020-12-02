@@ -11,17 +11,18 @@
       href="/node_modules/normalize.min.css/normalize.min.css"
     />
     <script>
-        if ("serviceWorker" in navigator) {
-      navigator.serviceWorker
-        .register("/sw.js")
-        .then(reg => {
-          // registration worked
-          console.log("Registration succeeded. Scope is " + reg.scope);
-        })
-        .catch(error => {
-          // registration failed
-          console.log("Registration failed with " + error);
-        });
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker
+          .register("/sw.js")
+          .then(reg => {
+            // registration worked
+            console.log("Registration succeeded. Scope is " + reg.scope);
+          })
+          .catch(error => {
+            // registration failed
+            console.log("Registration failed with " + error);
+          });
+      }
     </script>
     <link rel="manifest" href="/manifest.json" />
     <script src="https://cdn.jsdelivr.net/npm/ipfs@0.52.2/dist/index.min.js"></script>
@@ -65,8 +66,12 @@
       <script src="/node_modules/@editorjs/embed/dist/bundle.js"></script>
       <script src="/node_modules/@editorjs/paragraph/dist/bundle.js"></script>
       <script src="/node_modules/@editorjs/warning/dist/bundle.js"></script>
+      <script src="/node_modules/editorjs-drag-drop/dist/bundle.js"></script>
       <script>
         window.editor = new EditorJS({
+          onReady: () => {
+            new DragDrop(editor);
+          },
           tools: {
             header: Header,
             quote: Quote,

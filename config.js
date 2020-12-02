@@ -6,17 +6,18 @@ module.exports = {
     "@editorjs/editorjs",
     "@editorjs/embed",
     "@editorjs/paragraph",
-    "editorjs-header-with-anchor",
+"editorjs-drag-drop",
     "@editorjs/quote",
     "@editorjs/inline-code",
     "@editorjs/underline",
+    "@editorjs/warning",
     "@editorjs/marker",
     "@editorjs/list",
     "@editorjs/code",
     "@editorjs/table",
     "@editorjs/delimiter",
     "@editorjs/simple-image",
-    "@editorjs/header"
+    "editorjs-header-with-anchor"
   ],
   runCmdAfterInstall: false,
   runAfterInstall: "echo Finished installing!"
