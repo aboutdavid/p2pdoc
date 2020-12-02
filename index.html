@@ -14,6 +14,10 @@
     <script src="/script.js" defer></script>
   </head>
   <body>
+    <h1>
+      
+    </h1>
+    <br>
     <div id="editorjs"></div>
 
     <footer>
@@ -23,6 +27,10 @@
       <script src="/node_modules/@editorjs/inline-code/dist/bundle.js"></script>
       <script src="/node_modules/@editorjs/marker/dist/bundle.js"></script>
       <script src="/node_modules/@editorjs/underline/dist/bundle.js"></script>
+      <script src="/node_modules/@editorjs/list/dist/bundle.js"></script>
+      <script src="/node_modules/@editorjs/code/dist/bundle.js"></script>
+      <script src="/node_modules/@editorjs/table/dist/bundle.js"></script>
+      <script src="/node_modules/@editorjs/delimiter/dist/bundle.js"></script>
       <script>
         const editor = new EditorJS({
           tools: {
@@ -35,7 +43,16 @@
               class: InlineCode,
               shortcut: "CMD+SHIFT+M"
             },
-            underline: Underline
+            underline: Underline,
+            delimiter: Delimiter,
+            table: {
+              class: Table
+            },
+            list: {
+              class: List,
+              inlineToolbar: true
+            },
+            code: CodeTool
           },
           holder: "editorjs"
         });
