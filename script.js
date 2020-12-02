@@ -57,6 +57,9 @@ pwa.icons = [
   window.PWAIcon("/img/android-chrome-512x512.png", "512x512", "png"),
   window.PWAIcon("/img/apple-touch-icon.png", "180x180", "png"),
   window.PWAIcon("/img/favicon-16x16.png", "16x16", "png"),
-  window.PWAIcon("/img/favicon-32x32.png", "32x32", "png")
+  window.PWAIcon("/img/favicon-32x32.png", "32x32", "png"),
+  window.PWAIcon("/img/favicon.ico", "16x16", "ico"),
 ];
+pwa.theme_color = "#222"
+pwa.background_color = "#222"
 window.PWAInject(pwa, "/sw.js");
