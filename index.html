@@ -5,21 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Hello!</title>
+  
 
     <!-- import the webpage's stylesheet -->
     <link
       rel="stylesheet"
       href="/node_modules/normalize.min.css/normalize.min.css"
     />
-
+<script src="https://p2pdoc.glitch.me/node_modules/@aboutdavid/easypwa/dist/bundle.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/ipfs@0.52.2/dist/index.min.js"></script>
     <link rel="stylesheet" href="/style.css" />
     <link rel="stylesheet" href="/node_modules/blocks.css/dist/blocks.min.css" />
     <!-- import the webpage's javascript file -->
     <script src="/script.js" defer></script>
   </head>
-  <body>
+  <body onhashchange="window.loadDoc()">
     <h1>
       P2PNote
     </h1>
