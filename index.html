@@ -75,7 +75,9 @@
       href="/node_modules/blocks.css/dist/blocks.min.css"
     />
     <!-- import the webpage's javascript file -->
-    <script src="/script.js" defer></script>
+    <script src="/script.js"></script>
+    <script src="/download.js"></script>
+    <script src="https://editor-js-parser.glitch.me"></script>
   </head>
   <body onhashchange="window.loadDoc()">
     <h1>
@@ -99,10 +101,17 @@
     >
       Clear!
     </button>
+    <button
+      class="block fixed"
+      onclick="downloadAsHtml()"
+      id="downloadbtn"
+      type="button"
+      disabled
+    >Download</button>
     <br />
-   
+
     <div id="editorjs"></div>
-   
+
     <footer>
       <!-- Load plugins -->
       <script src="/node_modules/@editorjs/editorjs/dist/editor.js"></script>

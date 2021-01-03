@@ -57,3 +57,10 @@ window.saveDoc = function() {
       console.log("Saving failed: ", error);
     });
 };
+function downloadAsHtml (){
+  window.editor
+    .save()
+    .then(outputData => {
+      window.download(window.EditorJSParser(outputData))
+  })
+}
