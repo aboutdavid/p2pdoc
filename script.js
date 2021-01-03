@@ -19,6 +19,8 @@ document.addEventListener("DOMContentLoaded", async () => {
   document.getElementById("savebtn").innerHTML = "Save!";
     document.getElementById("clearbtn").disabled = false;
   document.getElementById("clearbtn").setAttribute("class", "block");
+      document.getElementById("downloadbtn").disabled = false;
+  document.getElementById("downloadbtn").setAttribute("class", "block");
 });
 window.loadDoc = async function() {
   for await (const data of window.node.cat(window.location.hash.substr(1))) {
@@ -61,6 +63,6 @@ function downloadAsHtml (){
   window.editor
     .save()
     .then(outputData => {
-      window.download(window.EditorJSParser(outputData))
+      window.download(window.EditorJSParser.render(outputData), `${new Date().toISOString()}.html`, "text/html")
   })
 }
