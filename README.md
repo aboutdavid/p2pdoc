@@ -3,4 +3,6 @@
 a web app that allows you to create a document with editor.js and save it to the distributed web using IPFS.
 
 ![screenshot of p2pdoc](https://file.coffee/u/6uV-xVy1uc.png)
-### Installation:
+
+### Demo:
+[p2pdoc.glitch.me](https://p2pdoc.glitch.me/)
