@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   } else {
     (async () => {
       for await (const data of window.node.cat(
-        "QmRNXdZsgUA86CzS1GB8GfLhQ8WEuQ58Vt5aWM3ia7jYY2"
+        "QmXBA1GRRj7UCzARoJ6pFXyhAHUKUjYKiFeQttB2Zp8hzY"
       )) {
         window.editor.render(JSON.parse(data.toString()));
       }
@@ -17,9 +17,9 @@ document.addEventListener("DOMContentLoaded", async () => {
   document.getElementById("savebtn").disabled = false;
   document.getElementById("savebtn").setAttribute("class", "block");
   document.getElementById("savebtn").innerHTML = "Save!";
-    document.getElementById("clearbtn").disabled = false;
+  document.getElementById("clearbtn").disabled = false;
   document.getElementById("clearbtn").setAttribute("class", "block");
-      document.getElementById("downloadbtn").disabled = false;
+  document.getElementById("downloadbtn").disabled = false;
   document.getElementById("downloadbtn").setAttribute("class", "block");
 });
 window.loadDoc = async function() {
@@ -59,10 +59,12 @@ window.saveDoc = function() {
       console.log("Saving failed: ", error);
     });
 };
-function downloadAsHtml (){
-  window.editor
-    .save()
-    .then(outputData => {
-      window.download(window.EditorJSParser.render(outputData), `${new Date().toISOString()}.html`, "text/html")
-  })
+function downloadAsHtml() {
+  window.editor.save().then(outputData => {
+    window.download(
+      window.EditorJSParser.render(outputData),
+      `${new Date().toISOString()}.html`,
+      "text/html"
+    );
+  });
 }

@@ -3,10 +3,11 @@ module.exports = {
   packages: [
     "normalize.min.css",
     "blocks.css",
+    "ipfs",
     "@editorjs/editorjs",
     "@editorjs/embed",
     "@editorjs/paragraph",
-"editorjs-drag-drop",
+    "editorjs-drag-drop",
     "@editorjs/quote",
     "@editorjs/inline-code",
     "@editorjs/underline",
