@@ -1,0 +1,1 @@
+require('child_process').execSync(`npm install ${require("./packages.js").join(" ")} --save --no-package-lock --no-audit --production`)
